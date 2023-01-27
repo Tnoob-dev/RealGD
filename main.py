@@ -1,3 +1,9 @@
+import os
+from dotenv import load_dotenv
+
+from pydrive2.auth import GoogleAuth
+from pydrive2.drive import GoogleDrive
+
 import logging
 import time
 
@@ -5,12 +11,6 @@ logging.basicConfig(filename="/var/www/html/log.txt",format='[%(levelname) 5s/%(
 logging.error("Waiting 30 minutes...")
 time.sleep(1800)
 logging.error("Running app now")
-
-import os
-from dotenv import load_dotenv
-
-from pydrive2.auth import GoogleAuth
-from pydrive2.drive import GoogleDrive
 
 
 

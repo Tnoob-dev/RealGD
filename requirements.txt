@@ -5,3 +5,4 @@ aiohttp
 zippyshare_downloader
 requests
 py7zr
+python-dotenv

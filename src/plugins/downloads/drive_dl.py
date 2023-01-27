@@ -30,7 +30,7 @@ async def complete_gdl(drive: GoogleDrive, url: str, message: Message):
 
     father_folder = drive.ListFile(metadata).GetList()
     try:
-        await message.reply("Descargando")
+        mess = await message.reply("Descargando")
         for folder in father_folder:
 
             child_folder = drive.ListFile({'q':f"'{folder['id']}' in parents and trashed=false"}).GetList()
@@ -70,4 +70,5 @@ async def complete_gdl(drive: GoogleDrive, url: str, message: Message):
                 print('Finalizado')
     except:
         pass
+    await mess.edit("Descargado")
 

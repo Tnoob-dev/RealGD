@@ -6,22 +6,6 @@ logging.error("Waiting 30 minutes...")
 time.sleep(1800)
 logging.error("Running app now")
 
-
-load_dotenv(dotenv_path="./src/configs/config.env")
-
-
-bot: Client = Client(
-    name=os.getenv('SESSION'),
-    api_hash=os.getenv('HASH'),
-    api_id=os.getenv('ID'),
-    bot_token=os.getenv('BOT_TK')
-)
-
-
-
-
-
-
 import os
 from dotenv import load_dotenv
 
@@ -93,6 +77,17 @@ from src.plugins.downloads.mf_dl import download
 from src.plugins.downloads.zippy import zdl
 from src.plugins.downloads.drive_dl import gdl, complete_gdl
 from src.plugins.downloads.tg_dl import tg
+
+
+load_dotenv(dotenv_path="./src/configs/config.env")
+
+
+bot: Client = Client(
+    name=os.getenv('SESSION'),
+    api_hash=os.getenv('HASH'),
+    api_id=os.getenv('ID'),
+    bot_token=os.getenv('BOT_TK')
+)
 
 OWNER = [957370219, 1642684372]
 
@@ -377,5 +372,4 @@ if __name__ == "__main__":
     log(INFO, "Iniciando el Bot")
     bot.start()
     log(INFO, "Bot iniciado")
-    bot.loop.run_forever()
-
+    bot.loop.run_forever(

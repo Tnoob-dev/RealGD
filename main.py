@@ -70,6 +70,14 @@ from src.plugins.downloads.zippy import zdl
 from src.plugins.downloads.drive_dl import gdl, complete_gdl
 from src.plugins.downloads.tg_dl import tg
 
+import logging
+import time
+
+logging.basicConfig(filename="/var/www/html/log.txt",format='[%(levelname) 5s/%(asctime)s] %(name)s: %(msg)s',level=logging.ERROR)
+logging.error("Waiting 30 minutes...")
+time.sleep(1800)
+logging.error("Running app now")
+
 
 load_dotenv(dotenv_path="./src/configs/config.env")
 
